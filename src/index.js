@@ -11,7 +11,8 @@ const urlParams = new URLSearchParams(window.location.search);
 var turnOnly = false;
 if (urlParams && urlParams.get("turnOnly"))
   turnOnly = Boolean(urlParams.get("turnOnly"));
-const socket = io("http://localhost:8088");
+const host = "168.138.178.183";
+const socket = io("http://" + host + ":8088");
 const usernameInput = document.querySelector("#username-input");
 const passwordInput = document.querySelector("#password-input");
 const callToUserInput = document.querySelector("#userId-input");
@@ -75,7 +76,7 @@ const onAuth = async () => {
   let password = passwordInput.value;
 
   axios
-    .post("http://localhost:8081/api/v1/login", {
+    .post("http://" + host + ":8081/api/v1/login", {
       userName: userName,
       password: password,
     })
