@@ -3,7 +3,8 @@
 <body>
 	<h1>WebRTC Example</h1>
     <div>
-        <input type="text" id="accessToken-input" placeholder="Access Token" value="eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJpZDExMTExMTExMSIsImlhdCI6MTY0OTU4MDI2MywiZXhwIjoxNjUyMTcyMjYzfQ.OEWzMrGRLvbYuvlAz2_GaukYio0zLm36vuVqt-ztgEo"></input>
+        <input type="text" id="username-input" placeholder="UserName" ></input>
+        <input type="text" id="password-input" placeholder="Password" ></input>
         <button id="auth-button" onclick="onAuth()">Login</button>
     </div>
     <div>
@@ -11,12 +12,14 @@
         <span id="userId"></span>
     </div>
     <div>
-        <input type="text" id="roomId-input" placeholder="RoomId" value="6cf4fee1-e552-4ed2-9f54-19055f0a3b28"></input>
+        <input type="text" id="userId-input" placeholder="UserIdToCall" ></input>
         <button id="call-button" onclick="onCall()" disabled=true>Call</button>
     </div>
+    <input type="hidden" id="roomId-input"/>
 	<video id="local-video" autoplay width="640" height="480"></video>
 	<video id="remote-video" autoplay width="640" height="480"></video>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="/src/utils.js"></script>
 	<script src="/src/index.js"></script>
 </body>
